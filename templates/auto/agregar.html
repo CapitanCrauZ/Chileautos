@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base/contenido.html "%}
+
+{% load static %}
+
+{% block contenido %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<section class="section_6">
+    <form action="" method="POST">
+        {{ formulario.as_p }}
+        {% csrf_token %}
+        <button class="btn waves-effect waves-light" type="submit" name="action">Agregar
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</section>
+<!--<script src="{% static "staticListarAuto/js/jsListarAuto.js" %}"></script>-->
+{% endblock %}

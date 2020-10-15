@@ -4,7 +4,7 @@ from django.urls import path
 from .views import agregarAuto, eliminarAuto, modificarAuto, listarAutos
 urlpatterns = [
     path('agregar/', agregarAuto, name='agregar_auto'),
-    path('eliminar/', eliminarAuto, name='eliminar_auto'),
-    path('modificar/', modificarAuto, name='modificar_auto'),
+    path('eliminar/<int:id_auto>', eliminarAuto, name='eliminar_auto'),
+    path('modificar/<int:id_auto>', modificarAuto, name='modificar_auto'),
     path('', listarAutos, name='listar_auto')
 ]

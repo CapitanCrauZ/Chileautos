@@ -32,6 +32,10 @@
                     <td>{{auto.detalle}}</td>
                     <td>{{auto.anio}}</td>
                     <td>{{auto.fecha_ingreso}}</td>
+                    <td>
+                        <a href="modificar/{{ auto.id }}" class="btn-floating btn-midle waves-effect waves-light blue"><i class="material-icons">Modificar</i></a>
+                        <a href="eliminar/{{ auto.id }}" class="btn-floating btn-midle waves-effect waves-light red"><i class="material-icons">Eliminar</i></a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

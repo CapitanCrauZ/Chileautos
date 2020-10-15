@@ -1,13 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Auto
 from .forms import AutoForm
 
 # Create your views here.
 def agregarAuto(request):
-    
+    formulario = None
+    if request.method == 'POST':
+        formulario = AutoForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('/auto/')
+    else:
+        formulario = AutoForm()
     context = {
-        'titulo':'Agregar Auto'
+        'titulo':'Agregar Auto',
+        'formulario':formulario
     }
     return render(
         request,
@@ -15,19 +23,25 @@ def agregarAuto(request):
         context
     )
 
-def eliminarAuto(request):
-    context = {
-        'titulo':'Eliminar Auto'
-    }
-    return render(
-        request,
-        'auto/eliminar.html',
-        context
-    )
+def eliminarAuto(request, id_auto):
+    autoEncontrado = Auto.objects.get(pk = id_auto)
+    autoEncontrado.delete()
+    return redirect('/auto/')
 
-def modificarAuto(request):
+
+def modificarAuto(request, id_auto):
+    autoEncontrado = Auto.objects.get(pk=id_auto)
+    formulario = None
+    if request.method == 'POST':
+        formulario = AutoForm(request.POST, instance=autoEncontrado)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('/auto/')
+    else:
+        formulario = AutoForm(instance=autoEncontrado)    
     context = {
-        'titulo':'Modificar Auto'
+        'titulo':'Modificar Auto',
+        'formulario':formulario
     }
     return render(
         request,
