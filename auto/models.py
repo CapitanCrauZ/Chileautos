@@ -7,4 +7,4 @@ class Auto(models.Model):
     precio = models.PositiveIntegerField()
     detalle = models.TextField(max_length=50)
     anio = models.PositiveIntegerField()
-    fecha_ingreso = models.DateTimeField(auto_now=True)
+    fecha_ingreso = models.CharField(max_length=50)

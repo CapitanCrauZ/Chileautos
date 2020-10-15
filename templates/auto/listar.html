@@ -1,0 +1,45 @@
+{% extends "base/contenido.html "%}
+
+{% load static %}
+
+{% block contenido %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<section class="section_5">
+    <div class="row">
+        <h1>Listar Autos</h1>
+        <a href="agregar/">Agregar un Auto</a>
+    </div>
+    {% if autos %}
+    <div class="div_listarAutos">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Detalle</th>
+                    <th>Año</th>
+                    <th>Fecha Ingreso</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for auto in autos %}
+                <tr id="{{ auto.id }}">
+                    <td>{{auto.nombre}}</td>
+                    <td>{{auto.precio}}</td>
+                    <td>{{auto.detalle}}</td>
+                    <td>{{auto.anio}}</td>
+                    <td>{{auto.fecha_ingreso}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <p>No hay Autos.....</p>
+    {% endif %}
+</section>
+<!--<script src="{% static "staticListarAuto/js/jsListarAuto.js" %}"></script>-->
+{% endblock %}

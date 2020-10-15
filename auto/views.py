@@ -36,8 +36,10 @@ def modificarAuto(request):
     )
 
 def listarAutos(request):
+    autos = Auto.objects.all()
     context = {
-        'titulo':'Listar Auto'
+        'titulo':'Listar Auto',
+        'autos':autos
     }
     return render(
         request,

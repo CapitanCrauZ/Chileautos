@@ -21,8 +21,5 @@ urlpatterns = [
     path('menu/', include('menu.urls')),
     path('login/', include('login.urls')),
     path('formulario/', include('formulario.urls')),
-    path('auto/agregarAuto', include('auto.urls')),
-    path('auto/eliminarAuto', include('auto.urls')),
-    path('auto/modificarAuto', include('auto.urls')),
-    path('auto/listarAutos', include('auto.urls')),
+    path('auto/', include('auto.urls'))
 ]
