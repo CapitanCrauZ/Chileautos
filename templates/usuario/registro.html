@@ -1,0 +1,11 @@
+{% extends "base/contenido.html" %}
+
+{% block contenido %}
+<section class="section_7">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ formulario }}
+        <input type="submit" value="Guardar">
+    </form>
+</section>
+{% endblock contenido %}

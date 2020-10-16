@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'menu',
     'formulario',
     'login',
-    'auto'
+    'auto',
+    'cuenta'
     
 ]
 

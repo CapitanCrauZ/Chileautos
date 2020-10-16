@@ -1,0 +1,11 @@
+{% extends "base/contenido.html "%}
+
+{% block contenido %}
+<section class="section_6">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ formulario }}
+        <input type="submit" value="Enviar">
+    </form>
+</section>
+{% endblock contenido %}
