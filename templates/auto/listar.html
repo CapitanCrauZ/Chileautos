@@ -2,9 +2,11 @@
 
 {% load static %}
 
-{% block contenido %}
-
+{% block css %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+{% endblock css %}
+
+{% block contenido %}
 
 <section class="section_5">
     <div class="row">
@@ -45,5 +47,5 @@
         <p>No hay Autos.....</p>
     {% endif %}
 </section>
+{% endblock contenido %}
 <!--<script src="{% static "staticListarAuto/js/jsListarAuto.js" %}"></script>-->
-{% endblock %}
