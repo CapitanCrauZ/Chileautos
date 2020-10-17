@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'menu',
     'formulario',
-    'login',
     'auto',
     'cuenta'
     
