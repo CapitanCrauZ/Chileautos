@@ -1,8 +1,16 @@
 {% extends "base/contenido.html" %}
 
+{% load static %}
+
+{% block css %}
+<!--Enlace para el Css de Login-->
+<link rel="stylesheet" href="{% static "staticPerfil/css/style.css" %}">
+{% endblock css %}
+
 {% block contenido %}
     <section class="8">
         <h1>Bienvenido {{user.username}}</h1>
         <a href="/salir/">Cerrar Sesión</a>
+        <a href="/auto/">Gestionar Autos</a>
     </section>
 {% endblock contenido %}
