@@ -4,19 +4,26 @@
 
 {% block css %}
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
-<link rel="stylesheet" href="{% static "staticListarAuto/css/style.css" %}">
+<link rel="stylesheet" href="{% static "staticAgregarAuto/css/style.css" %}">
 {% endblock css %}
 
 {% block contenido %}
-<section class="section_6">
-    <form action="" method="POST">
-        {{ formulario.as_p }}
-        {% csrf_token %}
-        <button class="btn waves-effect waves-light" type="submit" name="action">Agregar
-            <i class="material-icons right">send</i>
-        </button>
-    </form>
-</section>
+<div class="container"
+    ><section class="section_6">
+        <div class="card">
+            <form action="" method="POST">
+                {{ formulario.as_p }}
+                {% csrf_token %}
+                <p>
+                    <button class="btn_volver" ><a class="a_volver" href="/auto/">Volver</a></button>
+                    <button class="btn_agregar" type="submit" name="action">Agregar</button>
+                </p>
+            </form>
+            
+        </div>
+    </section>
+</div>
+
 {% endblock contenido %}
 
 <!--<script src="{% static "staticListarAuto/js/jsListarAuto.js" %}"></script>-->

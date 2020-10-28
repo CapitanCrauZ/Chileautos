@@ -4,7 +4,12 @@ from django.db import models
 
 class Auto(models.Model):
     nombre = models.CharField(max_length=50,null=False,blank=False)
-    precio = models.PositiveIntegerField()
+    modelo = models.CharField(max_length=50)
+    marca = models.CharField(max_length=50)
     detalle = models.TextField(max_length=50)
-    anio = models.PositiveIntegerField()
-    fecha_ingreso = models.CharField(max_length=50)
+    año = models.PositiveIntegerField()
+    precio = models.PositiveIntegerField()
+    
+    
+    
+    
