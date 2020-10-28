@@ -4,13 +4,15 @@
 
 {% block css %}
 <!--Enlace para el Css de Login-->
-<link rel="stylesheet" href="{% static "staticPerfil/css/style.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "staticPerfil/css/style.css" %}">
 {% endblock css %}
 
 {% block contenido %}
+<div class="container">
     <section class="8">
         <h1>Bienvenido {{user.username}}</h1>
-        <a href="/salir/">Cerrar Sesión</a>
+        <a href="/menu/">Cerrar Sesión</a>
         <a href="/auto/">Gestionar Autos</a>
     </section>
+</div>
 {% endblock contenido %}

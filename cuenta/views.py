@@ -1,20 +1,29 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from .forms import FormCreacionUsuario, FormCreacionPerfil
+from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
+from .models import Genero, PerfilUsuario
+from django.contrib.auth.models import User
 
 # Create your views here.
 def registro(request):
     #GET
-    formulario = UserCreationForm()
+    formulario = FormCreacionUsuario()
+    formulario2 = FormCreacionPerfil()
     if request.method == 'POST':
-        formulario = UserCreationForm(data = request.POST)
-        if formulario.is_valid():
-            usuarioRegistrado = formulario.save()
-            if usuarioRegistrado is not None:
-                login(request, usuarioRegistrado)
-                return redirect('/cuenta/perfil/')
+        formulario = FormCreacionUsuario(request.POST)
+        formulario2 = FormCreacionPerfil(request.POST)
+        if formulario.is_valid() and formulario2.is_valid(): 
+            usuario = formulario.save()
+            perfil = formulario2.save(commit=False)
+            perfil.usuario = usuario
+            perfil.save()
+            messages.add_message(request, messages.INFO, 'Registrado Correctamente....')
+            return redirect('/cuenta/perfil/')
     context = {
-        'formulario':formulario
+        'formulario':formulario,
+        'formulario2': formulario2
     }
     return render(
         request,
@@ -47,7 +56,7 @@ def iniciarSesion(request):
     #POST
 def salir(request):
     logout(request)
-    return redirect('cuenta/')
+    return redirect('menu/')
 
 
 def perfil(request):

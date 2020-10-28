@@ -5,15 +5,27 @@
 
 {% block css %}
 <!--Enlace para el Css de Login-->
-<link rel="stylesheet" href="{% static "staticRegistro/css/style.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "staticRegistro/css/style.css" %}">
 {% endblock css %}
 
 {% block contenido %}
-<section class="section_7">
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ formulario }}
-        <input type="submit" value="Guardar">
-    </form>
-</section>
+<div class="container">
+    <section class="section_7">
+        <div class="card">
+            <form action="" method="POST">
+                <h1 class="Titulo">Registro</h1>
+                {% csrf_token %}
+                {% for campo in formulario %}
+                    <div class="form-group">
+                        <label for="{{ campo.id_for_label }}">{{campo.label}}</label>
+                        {{campo}}
+                    </div>
+                <!--{{ formulario.as_p }}-->
+                {% endfor %}
+                {{ formulario2.as_p }}           
+                <input type="submit" class="btn_guardar" value="Guardar">
+            </form>
+        </div>
+    </section>
+</div>
 {% endblock contenido %}
