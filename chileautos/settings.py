@@ -40,10 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.menu',
-    'formulario',
     'apps.auto',
-    'apps.cuenta',
-    'apps.fotos'
+    'apps.cuenta'
     
 ]
 
@@ -138,5 +136,5 @@ STATIC_ROOT = join(BASE_DIR,'static','static_root')
 STATICFILES_DIRS = [join(BASE_DIR,'static')]
 
 #Configuración para media
-URL_MEDIA = '/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')

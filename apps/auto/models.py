@@ -10,6 +10,8 @@ class Auto(models.Model):
     año = models.PositiveIntegerField()
     precio = models.PositiveIntegerField()
     
-    
-    
+
+class PerfilAuto(models.Model):
+    imagenAuto = models.FileField(upload_to='fotos', default=None)
+    auto = models.OneToOneField(Auto, on_delete=models.CASCADE, blank=True)
     

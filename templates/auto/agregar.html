@@ -11,8 +11,9 @@
 <div class="container"
     ><section class="section_6">
         <div class="card">
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 {{ formulario.as_p }}
+                {{ formulario2.as_p }}
                 {% csrf_token %}
                 <p>
                     <button class="btn_volver" ><a class="a_volver" href="/auto/">Volver</a></button>

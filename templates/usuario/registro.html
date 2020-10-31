@@ -12,7 +12,7 @@
 <div class="container">
     <section class="section_7">
         <div class="card">
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <h1 class="Titulo">Registro</h1>
                 {% csrf_token %}
                 {% for campo in formulario %}

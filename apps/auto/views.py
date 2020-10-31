@@ -1,21 +1,28 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Auto
-from .forms import AutoForm
+from .models import Auto, PerfilAuto
+from .forms import AutoForm, PerfilAutoForm
 
 # Create your views here.
+
 def agregarAuto(request):
-    formulario = None
+    
+    formulario = AutoForm()
+    formulario2 = PerfilAutoForm()
     if request.method == 'POST':
         formulario = AutoForm(request.POST)
-        if formulario.is_valid():
-            formulario.save()
+        formulario2 = PerfilAutoForm(request.POST, request.FILES)
+        if formulario.is_valid() and formulario2.is_valid():
+            auto = formulario.save()
+            perfilAuto = formulario2.save(commit=False)
+            perfilAuto.auto = auto
+            perfilAuto.save()
             return redirect('/auto/')
-    else:
-        formulario = AutoForm()
     context = {
         'titulo':'Agregar Auto',
-        'formulario':formulario
+        'formulario':formulario,
+        'formulario2':formulario2
+        
     }
     return render(
         request,
@@ -31,17 +38,15 @@ def eliminarAuto(request, id_auto):
 
 def modificarAuto(request, id_auto):
     autoEncontrado = Auto.objects.get(pk=id_auto)
-    formulario = None
+    formulario = AutoForm(instance=autoEncontrado)  
     if request.method == 'POST':
         formulario = AutoForm(request.POST, instance=autoEncontrado)
         if formulario.is_valid():
             formulario.save()
             return redirect('/auto/')
-    else:
-        formulario = AutoForm(instance=autoEncontrado)    
     context = {
         'titulo':'Modificar Auto',
-        'formulario':formulario
+        'formulario':formulario,
     }
     return render(
         request,
@@ -51,9 +56,11 @@ def modificarAuto(request, id_auto):
 
 def listarAutos(request):
     autos = Auto.objects.all()
+    imagenAutos = PerfilAuto.objects.all()
     context = {
         'titulo':'Listar Auto',
-        'autos':autos
+        'autos':autos,
+        'imagenAuto': imagenAutos
     }
     return render(
         request,

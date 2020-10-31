@@ -12,13 +12,14 @@ class FormCreacionUsuario(UserCreationForm):
             'first_name',
             'last_name',
             'password1',
-            'password2'
+            'password2',
+
         )
 
 class FormCreacionPerfil(forms.ModelForm):
     class Meta:
         model = PerfilUsuario
-        fields = ('genero', )
+        fields = ('genero', 'fotoPerfil', )
 
 """class FormIniciarSesion(AuthenticationForm):
     def __init__(self, *args, **kwargs):

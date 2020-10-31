@@ -13,7 +13,7 @@ def registro(request):
     formulario2 = FormCreacionPerfil()
     if request.method == 'POST':
         formulario = FormCreacionUsuario(request.POST)
-        formulario2 = FormCreacionPerfil(request.POST)
+        formulario2 = FormCreacionPerfil(request.POST, request.FILES)
         if formulario.is_valid() and formulario2.is_valid(): 
             usuario = formulario.save()
             perfil = formulario2.save(commit=False)
@@ -61,9 +61,14 @@ def salir(request):
 
 
 def perfil(request):
+    fotos = PerfilUsuario.objects.all()
+    context = {
+        'fotoPerfil': fotos
+    }
     if request.user.is_authenticated:
         return render(
             request,
-            'usuario/perfil.html'
+            'usuario/perfil.html',
+            context
         )
     return redirect('cuenta/')
