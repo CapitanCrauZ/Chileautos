@@ -20,4 +20,9 @@ class FormCreacionPerfil(forms.ModelForm):
         model = PerfilUsuario
         fields = ('genero', )
 
+"""class FormIniciarSesion(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super(FormIniciarSesion,self).__init__(*args, **kwargs)
+        agregar"""
+
 

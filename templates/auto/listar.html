@@ -21,10 +21,12 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Precio</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
                     <th>Detalle</th>
                     <th>Año</th>
-                    <th>Fecha Ingreso</th>
+                    <th>Precio</th>
+
                 </tr>
             </thead>
 
@@ -32,10 +34,11 @@
                 {% for auto in autos %}
                 <tr id="{{ auto.id }}">
                     <td>{{auto.nombre}}</td>
-                    <td>{{auto.precio}}</td>
+                    <td>{{auto.modelo}}</td>
+                    <td>{{auto.marca}}</td>                  
                     <td>{{auto.detalle}}</td>
-                    <td>{{auto.anio}}</td>
-                    <td>{{auto.fecha_ingreso}}</td>
+                    <td>{{auto.año}}</td>
+                    <td>{{auto.precio}}</td>
                     <td>
                         <a href="modificar/{{ auto.id }}" class="btn-floating btn-midle waves-effect waves-light blue"><i class="material-icons">Modificar</i></a>
                         <a href="eliminar/{{ auto.id }}" class="btn-floating btn-midle waves-effect waves-light red"><i class="material-icons">Eliminar</i></a>

@@ -42,6 +42,7 @@ def iniciarSesion(request):
 
             usuarioLogueado = authenticate(username = username, password = password) 
             if usuarioLogueado is not None:
+                #messages.add_message(request, messages.SUCCESS, 'Bienvenido {}'.format(usuarioLogueado.get_username()))
                 login(request, usuarioLogueado)
                 return redirect('perfil/')
 
