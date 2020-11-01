@@ -12,8 +12,7 @@
     <section class="8">
         <div class="card">
             <h1>Bienvenido {{user.username}}</h1>
-            <img src="/media/{{ user.foto_perfil}" alt="">
-            <a href="/menu/">Cerrar Sesión</a>
+            <a href="{% url 'salir' %}">Cerrar Sesión</a>
             <a href="/auto/">Gestionar Autos</a>
         </div>
     </section>

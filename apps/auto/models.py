@@ -12,3 +12,13 @@ class Auto(models.Model):
     imagenAuto = models.FileField(upload_to='fotos', default=None)
     
     
+class Categoria(models.Model):
+   name = models.CharField(max_length=40)
+
+   def str(self):
+       return self.name
+   class Meta:
+       #para darle nombre a la tabla
+       db_table = 'categoria'
+       verbose_name = 'Categoría'
+       ordering = ['id']

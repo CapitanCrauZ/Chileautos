@@ -57,7 +57,7 @@ def iniciarSesion(request):
     #POST
 def salir(request):
     logout(request)
-    return redirect('menu/')
+    return redirect('/cuenta/')
 
 
 def perfil(request):

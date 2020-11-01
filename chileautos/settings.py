@@ -125,6 +125,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+#TIENE que agregarlo el paolo es para mandar correos de compras 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'b84e9fb03b6f13'
+EMAIL_HOST_PASSWORD = '8f8f84ce6f3679'
+EMAIL_PORT = '2525'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
