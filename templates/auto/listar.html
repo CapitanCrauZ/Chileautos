@@ -40,10 +40,10 @@
                     <td>{{auto.detalle}}</td>
                     <td>{{auto.año}}</td>
                     <td>{{auto.precio}}</td>
-                    <td>{{auto.imagenAuto}}</td>
+                    <td><img src="/media/{{auto.imagenAuto}} " alt=""></td>
                     <td>
-                        <a href="modificar/{{ auto.id }}" class="btn-floating btn-midle waves-effect waves-light blue"><i class="material-icons">Modificar</i></a>
-                        <a href="eliminar/{{ auto.id }}" class="btn-floating btn-midle waves-effect waves-light red"><i class="material-icons">Eliminar</i></a>
+                        <a href="modificar/{{ auto.id }}"><input type="submit" value="Modificar" class="btn_modificar"></a>
+                        <a href="eliminar/{{ auto.id }}"><input type="submit" value="Eliminar" class="btn_eliminar"></a>
                     </td>
                 </tr>
                 {% endfor %}

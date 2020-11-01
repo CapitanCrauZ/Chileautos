@@ -12,7 +12,6 @@ class Genero(models.Model):
 
 class PerfilUsuario(models.Model):
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
-    fotoPerfil = models.FileField(upload_to='fotos', default=None)
     usuario = models.OneToOneField(User, on_delete=models.CASCADE, blank=True)
 
 

@@ -19,7 +19,7 @@ class FormCreacionUsuario(UserCreationForm):
 class FormCreacionPerfil(forms.ModelForm):
     class Meta:
         model = PerfilUsuario
-        fields = ('genero', 'fotoPerfil', )
+        fields = ('genero',  )
 
 """class FormIniciarSesion(AuthenticationForm):
     def __init__(self, *args, **kwargs):

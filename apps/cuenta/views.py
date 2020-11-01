@@ -61,14 +61,9 @@ def salir(request):
 
 
 def perfil(request):
-    fotos = PerfilUsuario.objects.all()
-    context = {
-        'fotoPerfil': fotos
-    }
     if request.user.is_authenticated:
         return render(
             request,
             'usuario/perfil.html',
-            context
         )
     return redirect('cuenta/')

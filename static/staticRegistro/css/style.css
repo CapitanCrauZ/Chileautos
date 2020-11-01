@@ -21,7 +21,7 @@
 
 .card{
     height: 80%;
-    width: 60%;
+    width: 40%;
     justify-content: space-around;
     border-radius: 10px;
     align-items: center;
@@ -41,7 +41,7 @@ select{
 form{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 70%;
     justify-content: space-evenly;
     height: 80%;
 }

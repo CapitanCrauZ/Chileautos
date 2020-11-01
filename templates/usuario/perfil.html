@@ -10,16 +10,12 @@
 {% block contenido %}
 <div class="container">
     <section class="8">
-        <h1>Bienvenido {{user.username}}</h1>
-        {% if fotos %}
-            {% for foto in fotos %}
-            <div class="card">
-                <img src="/media/fotos/ {{ foto.foto }}" alt="">
-            </div>
-            {% endfor %}
-        {% endif %}
-        <a href="/menu/">Cerrar Sesión</a>
-        <a href="/auto/">Gestionar Autos</a>
+        <div class="card">
+            <h1>Bienvenido {{user.username}}</h1>
+            <img src="/media/{{ user.foto_perfil}" alt="">
+            <a href="/menu/">Cerrar Sesión</a>
+            <a href="/auto/">Gestionar Autos</a>
+        </div>
     </section>
 </div>
 {% endblock contenido %}
