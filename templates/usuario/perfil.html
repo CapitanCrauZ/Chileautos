@@ -9,11 +9,11 @@
 
 {% block contenido %}
 <div class="container">
-    <section class="8">
+    <section class="section_8">
         <div class="card">
-            <h1>Bienvenido {{user.username}}</h1>
-            <a href="{% url 'salir' %}">Cerrar Sesión</a>
-            <a href="/auto/">Gestionar Autos</a>
+            <h1>Bienvenido {{user.username}}</h1>            
+            <a href="/auto/"><input type="submit" value="Gestionar Autos" class="btn_gestionar"></a>
+            <a href="{% url 'salir' %}"><input type="submit" value="Cerrar Sesión" class="btn_cerrarsesion"></a>
         </div>
     </section>
 </div>
