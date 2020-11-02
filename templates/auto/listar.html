@@ -10,15 +10,14 @@
 {% block contenido %}
 
 <section class="section_5">
-    <div class="row">
-        <h1>Listar Autos</h1>
-        <a href="agregar/">Agregar un Auto</a>
-        <a href="/cuenta/perfil">Volver</a>
-    </div>
     {% if autos %}
+    <h1>Lista de Vehiculos</h1>
     <div class="div_listarAutos">
+        
         <table>
+            
             <thead>
+              
                 <tr>
                     <th>Nombre</th>
                     <th>Modelo</th>
@@ -41,7 +40,7 @@
                     <td>{{auto.año}}</td>
                     <td>{{auto.precio}}</td>
                     <td><img src="/media/{{auto.imagenAuto}} " alt=""></td>
-                    <td>
+                    <td class="funciones">
                         <a href="modificar/{{ auto.id }}"><input type="submit" value="Modificar" class="btn_modificar"></a>
                         <a href="eliminar/{{ auto.id }}"><input type="submit" value="Eliminar" class="btn_eliminar"></a>
                     </td>
@@ -53,6 +52,12 @@
     {% else %}
         <p>No hay Autos.....</p>
     {% endif %}
+    <div class="row">
+        <div class="card">
+            <a href="agregar/"><input type="submit" value="Agregar un Auto" class="btn_agregar"></a>
+            <a href="/cuenta/perfil"><input type="submit" value="Volver" class="btn_volver"></a>
+        </div>
+    </div>
 </section>
 {% endblock contenido %}
 <!--<script src="{% static "staticListarAuto/js/jsListarAuto.js" %}"></script>-->

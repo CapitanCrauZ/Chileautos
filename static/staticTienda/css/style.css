@@ -1,0 +1,75 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+img{
+    width: 300px;
+    height: 250;
+}
+
+.section_5{
+    display: flex;
+    height: 800px;
+    background-image: linear-gradient(120deg, rgba(216, 233, 196, 0.383) 0%, rgba(193, 206, 184, 0.431) 100%), url(images/daniel-cheung--oM_twQDw2Y-unsplash.jpg);
+    background-position: center;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 20%;
+}
+
+.div_listarAutos{
+    display: flex;
+    height: 80%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    width: 80%;
+    height: 60%;
+    padding: 30px;
+    background-image: linear-gradient(120deg, rgba(173, 168, 148, 0.883) 0%, rgba(168, 168, 157, 0.876) 100%);
+}
+
+.btn_volver{
+    width: 300px;
+    height: 40px;
+}
+
+.btn_ircarrito{
+    width: 300px;
+    height: 40px;
+}
+
+.btn_agregarcarro{
+    width: 180px;
+    height: 60px;
+    border-radius: 150px;
+    background-color: slateblue;
+    color: white;
+    border-color: transparent;
+}
+
+td{
+    border: 2px solid;
+    text-align: center;
+}
+
+.funciones{
+    border: 0px !important;
+}
+
+h1{
+    display: flex;
+    align-self: center;
+    padding-top: 30px;
+}

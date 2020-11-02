@@ -1,0 +1,48 @@
+{% extends "base/contenido.html "%}
+
+{% load static %}
+
+{% block css %}
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+<link rel="stylesheet" href="{% static "staticTienda/css/style.css" %}">
+{% endblock css %}
+
+{% block contenido %}
+
+<section class="section_5">
+    {% if autos %}
+    <h1>Tienda de Chileautos</h1>
+    <div class="div_listarAutos">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for auto in autos %}
+                <tr id="{{ auto.id }}">
+                    <td>{{auto.nombre}}</td>              
+                    <td>{{auto.precio}}</td>
+                    <td><img src="/media/{{auto.imagenAuto}} " alt=""></td>
+                    <td class="funciones">
+                        <input type="submit" value="Agregar al Carro" class="btn_agregarcarro">
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <p>No hay Autos.....</p>
+    {% endif %}
+    <div class="row">
+        <a href="/cuenta/perfil"><input type="submit" value="Volver" class="btn_volver"></a> 
+        <a href="/auto/tienda/carrito"><input type="submit" value="Ir al Carro" class="btn_ircarrito"></a>
+    </div>
+</section>
+{% endblock contenido %}

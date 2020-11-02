@@ -20,7 +20,7 @@ def registro(request):
             perfil.usuario = usuario
             perfil.save()
             messages.add_message(request, messages.INFO, 'Registrado Correctamente....')
-            return redirect('/cuenta/perfil/')
+            return redirect('/perfil/')
     context = {
         'formulario':formulario,
         'formulario2': formulario2

@@ -6,16 +6,17 @@ from .forms import AutoForm
 # Create your views here.
 
 def agregarAuto(request):
-    
     formulario = AutoForm()
     if request.method == 'POST':
         formulario = AutoForm(request.POST, request.FILES)
         if formulario.is_valid():
-            formulario.save()
+            auto = formulario.save(commit=False)
+            auto.vendedor = request.user
+            auto.save()
             return redirect('/auto/')
     context = {
         'titulo':'Agregar Auto',
-        'formulario':formulario,      
+        'formulario':formulario
     }
     return render(
         request,
@@ -56,5 +57,17 @@ def listarAutos(request):
     return render(
         request,
         'auto/listar.html',
+        context
+    )
+
+def listarTienda(request):
+    autos = Auto.objects.all()
+    context = {
+        'titulo':'Listar Tienda',
+        'autos':autos
+    }
+    return render(
+        request,
+        'auto/tienda.html',
         context
     )

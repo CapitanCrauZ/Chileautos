@@ -1,6 +1,19 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
+class Categoria(models.Model):
+   name = models.CharField(max_length=40)
+
+   def __str__(self):
+       return self.name
+   class Meta:
+       #para darle nombre a la tabla
+       db_table = 'categoria'
+       verbose_name = 'Categoría'
+       ordering = ['id']
+
+
 
 class Auto(models.Model):
     nombre = models.CharField(max_length=50,null=False,blank=False)
@@ -10,15 +23,5 @@ class Auto(models.Model):
     año = models.PositiveIntegerField()
     precio = models.PositiveIntegerField()
     imagenAuto = models.FileField(upload_to='fotos', default=None)
-    
-    
-class Categoria(models.Model):
-   name = models.CharField(max_length=40)
-
-   def str(self):
-       return self.name
-   class Meta:
-       #para darle nombre a la tabla
-       db_table = 'categoria'
-       verbose_name = 'Categoría'
-       ordering = ['id']
+    categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE, default=None)
+    vendedor = models.ForeignKey(User,on_delete=models.CASCADE, default =None,blank=True,null= True)

@@ -65,10 +65,15 @@ generacionMain();
         p_card_1.classList.add("p_card_1");
         p_card_1.innerText = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae quidem magni earum repudiandae ipsum accusamus aspernatur suscipit iste sed cupiditate vel molestias asperiores dolore laborum ducimus, voluptatem pariatur blanditiis eius.";
 
+        let a_card_1 = document.createElement("a");
+        a_card_1.classList.add("a_card_1");
+        a_card_1.id = 'auto/tienda/';
+
         let submit_card_1 = document.createElement("input");
         submit_card_1.classList.add("submit_card_1");
         submit_card_1.type = "submit";
         submit_card_1.value = "Explorar";
+
 
         // Datos Carta 2
 
@@ -85,6 +90,10 @@ generacionMain();
         let p_card_2 = document.createElement("p");
         p_card_2.classList.add("p_card_2");
         p_card_2.innerText = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae quidem magni earum repudiandae ipsum accusamus aspernatur suscipit iste sed cupiditate vel molestias asperiores dolore laborum ducimus, voluptatem pariatur blanditiis eius.";
+
+        let a_card_2 = document.createElement("a");
+        a_card_2.classList.add("a_card_2");
+        a_card_2.id = 'auto/tienda/';
 
         let submit_card_2 = document.createElement("input");
         submit_card_2.classList.add("submit_card_2");
@@ -107,26 +116,35 @@ generacionMain();
         p_card_3.classList.add("p_card_3");
         p_card_3.innerText = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae quidem magni earum repudiandae ipsum accusamus aspernatur suscipit iste sed cupiditate vel molestias asperiores dolore laborum ducimus, voluptatem pariatur blanditiis eius.";
 
+        let a_card_3 = document.createElement("a");
+        a_card_3.classList.add("a_card_3");
+        a_card_3.id = 'auto/tienda/';
+
         let submit_card_3 = document.createElement("input");
         submit_card_3.classList.add("submit_card_3");
         submit_card_3.type = "submit";
         submit_card_3.value = "Explorar";
 
+        a_card_1.appendChild(submit_card_1);
 
         div_card_1.appendChild(img_card_1);
         div_card_1.appendChild(h2_card_1);
         div_card_1.appendChild(p_card_1);
-        div_card_1.appendChild(submit_card_1);
+        div_card_1.appendChild(a_card_1);
+
+        a_card_2.appendChild(submit_card_2);
 
         div_card_2.appendChild(img_card_2);
         div_card_2.appendChild(h2_card_2);
         div_card_2.appendChild(p_card_2);
-        div_card_2.appendChild(submit_card_2);
+        div_card_2.appendChild(a_card_2);
+
+        a_card_3.appendChild(submit_card_3);
 
         div_card_3.appendChild(img_card_3);
         div_card_3.appendChild(h2_card_3);
         div_card_3.appendChild(p_card_3);
-        div_card_3.appendChild(submit_card_3);
+        div_card_3.appendChild(a_card_3);
 
 
         div_mazo.appendChild(div_card_1);
