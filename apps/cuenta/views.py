@@ -6,6 +6,8 @@ from django.contrib.auth import login, logout, authenticate
 from .models import Genero, PerfilUsuario
 from django.contrib.auth.models import User
 
+
+
 # Create your views here.
 def registro(request):
     #GET
@@ -67,3 +69,4 @@ def perfil(request):
             'usuario/perfil.html',
         )
     return redirect('cuenta/')
+
